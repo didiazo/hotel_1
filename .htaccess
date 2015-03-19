@@ -1,0 +1,13 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ $1.php
+
+# prevenir acceso .htaccess
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+ErrorDocument 404 /404.php
